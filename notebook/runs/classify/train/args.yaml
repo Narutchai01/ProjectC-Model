@@ -1,12 +1,12 @@
 task: classify
 mode: train
 model: yolov8n-cls.pt
-data: path/to/dataset
-epochs: 100
+data: d:\Work\ProjectC-Model\notebook/Data/TestDataSet/Cashew
+epochs: 1
 time: null
 patience: 100
 batch: 16
-imgsz: 640
+imgsz: 64
 save: true
 save_period: -1
 cache: false
@@ -94,6 +94,7 @@ shear: 0.0
 perspective: 0.0
 flipud: 0.0
 fliplr: 0.5
+bgr: 0.0
 mosaic: 1.0
 mixup: 0.0
 copy_paste: 0.0
