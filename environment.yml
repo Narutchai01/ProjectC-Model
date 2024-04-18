@@ -1,0 +1,7 @@
+name: my-env
+dependencies:
+  - python=3.11.5
+  - numpy
+  - pandas
+  - matplotlib
+  - scikit-learn
