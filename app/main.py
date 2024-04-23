@@ -22,7 +22,7 @@ async def predict(data: Data):
     HOME = os.getcwd()
     namrArr = []
     imageArr = data.imageArr
-    modelPath = HOME+"\\Model\\best.pt"
+    modelPath = HOME+"\\app\\Model\\best.pt"
     model = YOLO(modelPath)
 
     for img in imageArr:
