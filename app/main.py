@@ -19,10 +19,9 @@ def read_main():
 
 @app.post("/predict")
 async def predict(data: Data):
-    HOME = os.getcwd()
     namrArr = []
     imageArr = data.imageArr
-    modelPath = HOME+"\\app\\Model\\best.pt"
+    modelPath = "./Model/best.pt"
     model = YOLO(modelPath)
 
     for img in imageArr:
