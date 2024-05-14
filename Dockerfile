@@ -16,4 +16,4 @@ RUN apt-get install -y libglib2.0-0
 # RUN aptitude install -y libglib2.0-dev
 
 COPY ./app /code/app
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
