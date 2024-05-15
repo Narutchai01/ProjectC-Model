@@ -1,19 +1,15 @@
-FROM python:3.9
-
-RUN apt-get update -y
+FROM python:3.9-slim-buster
 
 WORKDIR /code
 
-ENV DEBIAN_FRONTEND=nointeractive
-
-RUN pip install --upgrade pip
 COPY ./requirements.txt /code/requirements.txt
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-RUN apt-get install -y libgl1-mesa-dev
-RUN apt-get update -y
-RUN apt-get install -y libglib2.0-0
-# RUN apt-get install -y aptitude
-# RUN aptitude install -y libglib2.0-dev
+
+RUN apt-get update -y && \
+    apt-get install -y --no-install-recommends libgl1-mesa-dev libglib2.0-0 && \
+    pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir --upgrade -r /code/requirements.txt && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY ./app /code/app
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "3000"]
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
