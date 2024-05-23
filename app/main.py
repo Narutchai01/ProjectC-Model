@@ -51,6 +51,6 @@ async def predict(data: Data):
     NameDisease = resultsName[1].replace("_", " ")
 
     return {
-        "NamePlant": resultsName[0],
-        "NameDisease": NameDisease
+        "plantname": resultsName[0],
+        "diseasename": NameDisease
     }
