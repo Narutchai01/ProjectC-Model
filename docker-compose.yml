@@ -1,8 +1,16 @@
 
 services:
-  server:
+  app:
     container_name: server
     build: .
     restart: always
     ports:
       - "8080:8080"
+    networks:
+      -  capstone
+    depends_on:
+      - client
+
+networks:
+  capstone:
+    driver: bridge

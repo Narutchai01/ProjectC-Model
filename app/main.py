@@ -34,7 +34,7 @@ async def predict(data: Data):
 
     imageArr = data.imageArr
     namrArr = []
-    modelPath = os.path.join("app","Model","run18","best.pt")
+    modelPath = os.path.join("app","Model","run20","best.pt")
     model = YOLO(modelPath)
 
     for img_url in imageArr:
@@ -48,9 +48,18 @@ async def predict(data: Data):
 
     resultsName = max(set(namrArr), key=namrArr.count)
     resultsName = resultsName.split("___")
-    NameDisease = resultsName[1].replace("_", " ")
+    NameDisease = resultsName[1].replace("_", " ") 
 
-    return {
-        "plantname": resultsName[0],
-        "diseasename": NameDisease
-    }
+    if NameDisease != "healthy":
+        return {
+            "plantname": resultsName[0],
+            "diseasename": NameDisease
+        }
+    else:
+        NameDisease = NameDisease.capitalize()
+        return {
+            "plantname": resultsName[0],
+            "diseasename": NameDisease
+        }
+
+
