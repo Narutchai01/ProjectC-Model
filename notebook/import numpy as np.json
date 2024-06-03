@@ -1,0 +1,28 @@
+import numpy as np
+import pandas as pd
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+import seaborn as sn
+
+def test_confusion_matrix():
+    # Define ground truth and predicted labels
+    ground_truth_labels = np.array([0, 1, 2, 0, 1, 2])
+    predicted_labels = np.array([0, 1, 1, 0, 2, 2])
+
+    # Create confustion matrix
+    conf_matrix = confusion_matrix(ground_truth_labels, predicted_labels)
+
+    # Create a dataframe for plotting
+    class_names = ['Class 0', 'Class 1', 'Class 2']
+    df_cm = pd.DataFrame(conf_matrix, index=class_names, columns=class_names)
+
+    # Plot the confusion matrix
+    plt.figure(figsize=(10, 7))
+    sn.heatmap(df_cm, annot=True, fmt='d')
+    plt.title('Confusion Matrix')
+    plt.xlabel('Predicted Labels')
+    plt.ylabel('True Labels')
+    plt.show()
+
+# Run the test
+test_confusion_matrix()

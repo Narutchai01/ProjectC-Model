@@ -34,7 +34,7 @@ async def predict(data: Data):
 
     imageArr = data.imageArr
     namrArr = []
-    modelPath = os.path.join("app","Model","run20","best.pt")
+    modelPath = os.path.join("app","Model","run21","best.pt")
     model = YOLO(modelPath)
 
     for img_url in imageArr:

@@ -1,0 +1,5 @@
+                  epoch,             train/loss,  metrics/accuracy_top1,  metrics/accuracy_top5,               val/loss,                 lr/pg0,                 lr/pg1,                 lr/pg2
+                      1,                    nan,                0.08333,                0.58333,                    nan,                      0,                      0,                      0
+                      2,                    nan,                0.08333,                0.58333,                    nan,             7.0693e-06,             7.0693e-06,             7.0693e-06
+                      3,                    nan,                0.08333,                0.58333,                    nan,             1.3997e-05,             1.3997e-05,             1.3997e-05
+                      4,                    nan,                0.08333,                0.58333,                    nan,             2.0784e-05,             2.0784e-05,             2.0784e-05
